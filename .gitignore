@@ -1,0 +1,15 @@
+# Virtual environments (also covers symlinks named venv)
+venv
+venv/
+.venv/
+__pycache__/
+*.pyc
+
+# Secrets — JANGAN commit API key
+.env
+
+# Vector DB store (data lokal, besar & regenerable)
+chroma_store/
+
+# OS junk
+.DS_Store
