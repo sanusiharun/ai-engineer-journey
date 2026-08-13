@@ -13,7 +13,7 @@ Setiap pelajaran ditulis sebagai kode nyata yang dijalankan & diverifikasi, buka
 | 2 | RAG Basics | ✅ |
 | 2.5 | RAG dengan ChromaDB (vector database) | ✅ |
 | 3 | Mini-agent dengan tools (ReAct loop) | ✅ |
-| 4 | Evaluasi prompt/output | 🔜 |
+| 4 | Evaluasi prompt/output (heuristic + LLM-as-judge) | ✅ |
 
 ## Struktur
 
@@ -21,6 +21,7 @@ Setiap pelajaran ditulis sebagai kode nyata yang dijalankan & diverifikasi, buka
 fase1-llm-basics/    # Basic LLM call, function calling, structured output, RAG basics
 fase2-rag/           # RAG dengan ChromaDB (vector database)
 fase3-agent/         # Mini-agent dengan tools (ReAct loop: mikir -> panggil tool -> lihat hasil -> ulang)
+fase4-eval/          # Evaluasi prompt/output: heuristic checks + LLM-as-judge (bandingin varian prompt pakai angka)
 ```
 
 ## Setup

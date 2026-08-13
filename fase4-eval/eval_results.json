@@ -1,0 +1,91 @@
+{
+  "detail_per_varian": {
+    "A_naive": [
+      {
+        "keluhan_id": 1,
+        "ringkasan": "Pelanggan mengeluhkan keterlambatan pengiriman paket selama 5 hari dari estimasi 2 hari dan resi yang tidak ter-update, sehingga meminta kepastian status pengirimannya.",
+        "heuristic": {
+          "jumlah_kata": 23,
+          "lolos_panjang": true,
+          "tidak_kosong": true,
+          "1_kalimat": true
+        },
+        "judge_skor": 5,
+        "judge_alasan": "Ringkasan menangkap inti masalah (keterlambatan 5 hari, resi tidak update) secara akurat dan jelas sehingga tim support langsung tahu perlu mengecek status pengiriman dan memberikan kepastian ke pelanggan."
+      },
+      {
+        "keluhan_id": 2,
+        "ringkasan": "Aplikasi mengalami force close saat membuka menu pembayaran meskipun sudah diperbarui ke versi terbaru, terjadi pada perangkat Android 13.",
+        "heuristic": {
+          "jumlah_kata": 19,
+          "lolos_panjang": true,
+          "tidak_kosong": true,
+          "1_kalimat": true
+        },
+        "judge_skor": 4,
+        "judge_alasan": "Ringkasan menangkap inti masalah dan konteks teknis dengan akurat, namun kurang actionable karena tidak menyertakan rekomendasi langkah tindak lanjut untuk tim support."
+      },
+      {
+        "keluhan_id": 3,
+        "ringkasan": "Customer meminta refund atas transaksi tanggal 10 yang tertagih dobel (double charge), karena menyebabkan saldonya minus.",
+        "heuristic": {
+          "jumlah_kata": 16,
+          "lolos_panjang": true,
+          "tidak_kosong": true,
+          "1_kalimat": true
+        },
+        "judge_skor": 5,
+        "judge_alasan": "Ringkasan menangkap inti masalah (double charge tanggal 10, saldo minus) dan jelas menyatakan tindakan yang diminta (refund salah satu transaksi), sehingga langsung actionable bagi tim support."
+      }
+    ],
+    "B_structured": [
+      {
+        "keluhan_id": 1,
+        "ringkasan": "Paket telat 5 hari (estimasi 2 hari) dan resi tidak update sejak kemarin; customer minta kepastian status pengiriman.",
+        "heuristic": {
+          "jumlah_kata": 18,
+          "lolos_panjang": true,
+          "tidak_kosong": true,
+          "1_kalimat": true
+        },
+        "judge_skor": 5,
+        "judge_alasan": "Ringkasan menangkap semua fakta inti (durasi keterlambatan, estimasi awal, status resi, permintaan customer) sehingga tim support bisa langsung menindaklanjuti tanpa perlu baca keluhan asli."
+      },
+      {
+        "keluhan_id": 2,
+        "ringkasan": "Aplikasi force close saat membuka menu pembayaran (Android 13, sudah update terbaru); customer minta perbaikan bug agar menu pembayaran bisa diakses.",
+        "heuristic": {
+          "jumlah_kata": 21,
+          "lolos_panjang": true,
+          "tidak_kosong": true,
+          "1_kalimat": true
+        },
+        "judge_skor": 5,
+        "judge_alasan": "Ringkasan menangkap masalah inti (force close di menu pembayaran, Android 13, sudah update) secara akurat dan memberikan konteks jelas bagi tim support untuk langsung menindaklanjuti sebagai bug report."
+      },
+      {
+        "keluhan_id": 3,
+        "ringkasan": "Customer terkena double charge untuk transaksi tanggal 10; minta salah satu tagihan di-refund karena saldo minus.",
+        "heuristic": {
+          "jumlah_kata": 17,
+          "lolos_panjang": true,
+          "tidak_kosong": true,
+          "1_kalimat": true
+        },
+        "judge_skor": 5,
+        "judge_alasan": "Ringkasan menangkap inti masalah (double charge tanggal 10) dan tindakan yang diminta (refund salah satu tagihan) secara akurat dan jelas untuk ditindaklanjuti tanpa perlu baca keluhan asli."
+      }
+    ]
+  },
+  "rekap": {
+    "A_naive": {
+      "rata2_skor_judge": 4.67,
+      "lolos_heuristic_panjang": "3/3"
+    },
+    "B_structured": {
+      "rata2_skor_judge": 5,
+      "lolos_heuristic_panjang": "3/3"
+    }
+  },
+  "pemenang": "B_structured"
+}
