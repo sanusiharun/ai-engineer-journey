@@ -3,15 +3,15 @@
     "A_naive": [
       {
         "keluhan_id": 1,
-        "ringkasan": "Pelanggan mengeluhkan keterlambatan pengiriman paket selama 5 hari dari estimasi 2 hari dan resi yang tidak ter-update, sehingga meminta kepastian status pengirimannya.",
+        "ringkasan": "Customer mengeluhkan keterlambatan paket yang sudah 5 hari melebihi estimasi 2 hari, dengan status resi yang tidak ter-update sejak kemarin, dan meminta kepastian pengiriman.",
         "heuristic": {
-          "jumlah_kata": 23,
+          "jumlah_kata": 25,
           "lolos_panjang": true,
           "tidak_kosong": true,
           "1_kalimat": true
         },
-        "judge_skor": 5,
-        "judge_alasan": "Ringkasan menangkap inti masalah (keterlambatan 5 hari, resi tidak update) secara akurat dan jelas sehingga tim support langsung tahu perlu mengecek status pengiriman dan memberikan kepastian ke pelanggan."
+        "judge_skor": 4,
+        "judge_alasan": "Ringkasan relevan dan akurat menangkap inti keluhan, tapi kurang actionable karena tidak menyertakan langkah tindak lanjut seperti cek nomor resi atau eskalasi ke kurir."
       },
       {
         "keluhan_id": 2,
@@ -23,11 +23,25 @@
           "1_kalimat": true
         },
         "judge_skor": 4,
-        "judge_alasan": "Ringkasan menangkap inti masalah dan konteks teknis dengan akurat, namun kurang actionable karena tidak menyertakan rekomendasi langkah tindak lanjut untuk tim support."
+        "judge_alasan": "Ringkasan relevan dan mencakup detail penting (menu pembayaran, sudah update, Android 13), namun kurang actionable karena tidak menyertakan rekomendasi langkah penanganan atau kategori prioritas untuk tim support."
       },
       {
         "keluhan_id": 3,
-        "ringkasan": "Customer meminta refund atas transaksi tanggal 10 yang tertagih dobel (double charge), karena menyebabkan saldonya minus.",
+        "ringkasan": "Customer mengalami double charge/penagihan ganda untuk transaksi tanggal 10 dan meminta refund salah satu tagihan karena saldonya menjadi minus.",
+        "heuristic": {
+          "jumlah_kata": 20,
+          "lolos_panjang": true,
+          "tidak_kosong": true,
+          "1_kalimat": true
+        },
+        "judge_skor": 5,
+        "judge_alasan": "Ringkasan menangkap inti masalah (double charge tanggal 10, saldo minus) dan tindakan yang diminta (refund salah satu tagihan) secara akurat dan langsung actionable bagi tim support."
+      }
+    ],
+    "B_structured": [
+      {
+        "keluhan_id": 1,
+        "ringkasan": "Paket telat 5 hari (estimasi 2 hari) dan resi tidak update; customer minta kepastian status pengiriman.",
         "heuristic": {
           "jumlah_kata": 16,
           "lolos_panjang": true,
@@ -35,37 +49,11 @@
           "1_kalimat": true
         },
         "judge_skor": 5,
-        "judge_alasan": "Ringkasan menangkap inti masalah (double charge tanggal 10, saldo minus) dan jelas menyatakan tindakan yang diminta (refund salah satu transaksi), sehingga langsung actionable bagi tim support."
-      }
-    ],
-    "B_structured": [
-      {
-        "keluhan_id": 1,
-        "ringkasan": "Paket telat 5 hari (estimasi 2 hari) dan resi tidak update sejak kemarin; customer minta kepastian status pengiriman.",
-        "heuristic": {
-          "jumlah_kata": 18,
-          "lolos_panjang": true,
-          "tidak_kosong": true,
-          "1_kalimat": true
-        },
-        "judge_skor": 5,
-        "judge_alasan": "Ringkasan menangkap semua fakta inti (durasi keterlambatan, estimasi awal, status resi, permintaan customer) sehingga tim support bisa langsung menindaklanjuti tanpa perlu baca keluhan asli."
+        "judge_alasan": "Ringkasan menangkap inti masalah (keterlambatan, resi tidak update, permintaan kepastian) secara akurat dan cukup jelas untuk tim support langsung menindaklanjuti pengecekan status pengiriman."
       },
       {
         "keluhan_id": 2,
-        "ringkasan": "Aplikasi force close saat membuka menu pembayaran (Android 13, sudah update terbaru); customer minta perbaikan bug agar menu pembayaran bisa diakses.",
-        "heuristic": {
-          "jumlah_kata": 21,
-          "lolos_panjang": true,
-          "tidak_kosong": true,
-          "1_kalimat": true
-        },
-        "judge_skor": 5,
-        "judge_alasan": "Ringkasan menangkap masalah inti (force close di menu pembayaran, Android 13, sudah update) secara akurat dan memberikan konteks jelas bagi tim support untuk langsung menindaklanjuti sebagai bug report."
-      },
-      {
-        "keluhan_id": 3,
-        "ringkasan": "Customer terkena double charge untuk transaksi tanggal 10; minta salah satu tagihan di-refund karena saldo minus.",
+        "ringkasan": "Aplikasi force close saat membuka menu pembayaran (Android 13, versi terbaru) — customer minta perbaikan bug ini segera.",
         "heuristic": {
           "jumlah_kata": 17,
           "lolos_panjang": true,
@@ -73,13 +61,25 @@
           "1_kalimat": true
         },
         "judge_skor": 5,
-        "judge_alasan": "Ringkasan menangkap inti masalah (double charge tanggal 10) dan tindakan yang diminta (refund salah satu tagihan) secara akurat dan jelas untuk ditindaklanjuti tanpa perlu baca keluhan asli."
+        "judge_alasan": "Ringkasan menangkap masalah inti (force close di menu pembayaran, sudah update, Android 13) secara akurat dan tim support langsung tahu ini bug spesifik yang perlu ditangani tim teknis."
+      },
+      {
+        "keluhan_id": 3,
+        "ringkasan": "Customer terkena double charge untuk transaksi tanggal 10; minta refund salah satu transaksi karena saldo jadi minus.",
+        "heuristic": {
+          "jumlah_kata": 17,
+          "lolos_panjang": true,
+          "tidak_kosong": true,
+          "1_kalimat": true
+        },
+        "judge_skor": 5,
+        "judge_alasan": "Ringkasan menangkap inti masalah (double charge tanggal 10) dan tindakan yang diminta (refund salah satu transaksi) secara akurat dan langsung actionable tanpa perlu baca keluhan asli."
       }
     ]
   },
   "rekap": {
     "A_naive": {
-      "rata2_skor_judge": 4.67,
+      "rata2_skor_judge": 4.33,
       "lolos_heuristic_panjang": "3/3"
     },
     "B_structured": {
