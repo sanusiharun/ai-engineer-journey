@@ -12,7 +12,7 @@ Setiap pelajaran ditulis sebagai kode nyata yang dijalankan & diverifikasi, buka
 | 1.6 | Structured Output (JSON mode) | ✅ |
 | 2 | RAG Basics | ✅ |
 | 2.5 | RAG dengan ChromaDB (vector database) | ✅ |
-| 3 | Mini-agent dengan tools | 🔜 |
+| 3 | Mini-agent dengan tools (ReAct loop) | ✅ |
 | 4 | Evaluasi prompt/output | 🔜 |
 
 ## Struktur
@@ -20,6 +20,7 @@ Setiap pelajaran ditulis sebagai kode nyata yang dijalankan & diverifikasi, buka
 ```
 fase1-llm-basics/    # Basic LLM call, function calling, structured output, RAG basics
 fase2-rag/           # RAG dengan ChromaDB (vector database)
+fase3-agent/         # Mini-agent dengan tools (ReAct loop: mikir -> panggil tool -> lihat hasil -> ulang)
 ```
 
 ## Setup
